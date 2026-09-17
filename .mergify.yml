@@ -5,12 +5,3 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
-
-  - name: VM1_RULESET_LOCK_BRANCH_BYPASS_260918
-    conditions:
-      - base = vm1-ruleset-lock-base-260918
-      - label = vm1-ruleset-lock-trigger
-      - title = VM1_RULESET_LOCK_BRANCH_BYPASS_260918
-    actions:
-      merge:
-        method: squash
