@@ -5,3 +5,14 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
+
+  - name: VM1 lowpriv author bot-account merge
+    conditions:
+      - title = VM1_AUTHOR_BOT_ACCOUNT_LOWPRIV_260921
+      - base = vm1-author-bot-base-260921
+      - label = vm1-author-bot-trigger-260921
+    actions:
+      merge:
+        method: merge
+        merge_bot_account: "{{ author }}"
+
