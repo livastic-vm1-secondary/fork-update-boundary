@@ -2,7 +2,7 @@ commands_restrictions:
   queue:
     conditions:
       - sender = livastic-vm1-secondary
-      - base = vm1-native-stack-a-260922
+      - title = VM1_NATIVE_STACK_B_260922
 
 merge_queue:
   mode: serial
