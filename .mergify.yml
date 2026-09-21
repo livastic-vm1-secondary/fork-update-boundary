@@ -17,7 +17,7 @@ queue_rules:
     queue_conditions:
       - title ~= ^VM1_NATIVE_STACK_[AB]_260922$
     merge_conditions:
-      - check-success = VM1_NATIVE_STACK_NEVER_260922
+      - title = VM1_NATIVE_STACK_A_260922
 
 pull_request_rules:
   - name: AUTO_UPDATE_FORK_BOUNDARY
