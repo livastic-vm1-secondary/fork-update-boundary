@@ -5,3 +5,14 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
+
+merge_protections:
+  - name: VM1 3001-file hidden sentinel must not change
+    if:
+      - base = vm1-largefork-base-260918
+    success_conditions:
+      - files != vm1-largefork-files/3001.txt
+
+merge_protections_settings:
+  reporting_method: check-runs
+  post_comment: false
