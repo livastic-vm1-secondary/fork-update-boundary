@@ -1,3 +1,23 @@
+commands_restrictions:
+  queue:
+    conditions:
+      - sender = livastic-vm1-secondary
+
+merge_queue:
+  mode: serial
+  max_parallel_checks: 1
+
+queue_rules:
+  - name: vm1-native-queuecond-cleanroom
+    batch_size: 1
+    max_checks_retries: 0
+    merge_method: merge
+    update_method: merge
+    queue_conditions:
+      - title = VM1_NATIVE_QUEUECOND_TOP_260922
+    merge_conditions:
+      - title = VM1_NATIVE_QUEUECOND_BOTTOM_260922
+
 pull_request_rules:
   - name: AUTO_UPDATE_FORK_BOUNDARY
     conditions:
