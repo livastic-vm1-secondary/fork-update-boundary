@@ -5,12 +5,3 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
-
-  - name: VM1 delete-head shared branch guard 260922
-    conditions:
-      - merged
-      - title = VM1_DELETE_HEAD_SHARED_PR1_260922
-      - base = vm1-dh-base-a-260922
-      - head = vm1-dh-shared-260922
-    actions:
-      delete_head_branch:
