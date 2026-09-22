@@ -1,7 +1,13 @@
-pull_request_rules:
-  - name: AUTO_UPDATE_FORK_BOUNDARY
-    conditions:
-      - base = main
-      - "#commits-behind > 0"
-    actions:
-      update:
+merge_queue:
+  mode: serial
+  max_parallel_checks: 1
+
+queue_rules:
+  - name: vm1-postsuccess-title
+    batch_size: 2
+    batch_max_wait_time: 5 min
+    queue_conditions: true
+    merge_conditions:
+      - check-success = vm1-postsuccess-ci
+      - title = VM1_POSTSUCCESS_TITLE_OK
+    merge_method: merge-batch
