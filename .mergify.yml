@@ -1,20 +1,7 @@
-commands_restrictions:
-  queue:
+pull_request_rules:
+  - name: AUTO_UPDATE_FORK_BOUNDARY
     conditions:
-      - sender = livastic-vm1-secondary
-      - title = VM1_MSTACK_SECRET_TOP_260922
-
-merge_queue:
-  mode: serial
-  max_parallel_checks: 1
-
-queue_rules:
-  - name: vm1-mstack-secret-impact
-    batch_size: 1
-    max_checks_retries: 0
-    merge_method: merge
-    update_method: merge
-    queue_conditions:
-      - title ~= ^VM1_MSTACK_SECRET_(BOTTOM|TOP)_260922$
-    merge_conditions:
-      - title = VM1_MSTACK_SECRET_BOTTOM_260922
+      - base = main
+      - "#commits-behind > 0"
+    actions:
+      update:
