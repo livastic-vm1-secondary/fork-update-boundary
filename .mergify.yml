@@ -1,18 +1,7 @@
 pull_request_rules:
-  - name: VM1 WA queue action while Merge Queue product is disabled
+  - name: AUTO_UPDATE_FORK_BOUNDARY
     conditions:
-      - title = VM1_MQOFF_WA_QUEUE_260922
+      - base = main
+      - "#commits-behind > 0"
     actions:
-      queue:
-        name: vm1-mqoff-wa
-
-queue_rules:
-  - name: vm1-mqoff-wa
-    queue_conditions:
-      - title = VM1_MQOFF_WA_QUEUE_260922
-    merge_conditions:
-      - title = VM1_MQOFF_WA_QUEUE_260922
-
-merge_queue:
-  mode: serial
-  max_parallel_checks: 1
+      update:
