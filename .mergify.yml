@@ -5,19 +5,3 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
-  - name: VM1 FROM_FORK TRUE 260923
-    conditions:
-      - title = VM1_POSTSUCCESS_TITLE_OK
-      - from-fork
-    actions:
-      label:
-        add:
-          - vm1-from-fork-true-260923
-  - name: VM1 FROM_FORK FALSE 260923
-    conditions:
-      - title = VM1_POSTSUCCESS_TITLE_OK
-      - -from-fork
-    actions:
-      label:
-        add:
-          - vm1-from-fork-false-260923
