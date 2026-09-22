@@ -1,7 +1,14 @@
-pull_request_rules:
-  - name: AUTO_UPDATE_FORK_BOUNDARY
-    conditions:
-      - base = main
-      - "#commits-behind > 0"
-    actions:
-      update:
+queue_rules:
+  - name: strict-bottom
+    queue_conditions:
+      - title = VM1_STACK_STRICT_BOTTOM_260923
+    merge_conditions:
+      - label = vm1-stack-strict-required-260923
+    merge_method: merge
+
+  - name: weak-top
+    queue_conditions:
+      - title = VM1_STACK_WEAK_TOP_260923
+    merge_conditions:
+      - title = VM1_STACK_WEAK_TOP_260923
+    merge_method: merge
