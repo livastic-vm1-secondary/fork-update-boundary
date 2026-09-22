@@ -1,7 +1,15 @@
-pull_request_rules:
-  - name: AUTO_UPDATE_FORK_BOUNDARY
+commands_restrictions:
+  queue:
     conditions:
-      - base = main
-      - "#commits-behind > 0"
-    actions:
-      update:
+      - sender = livastic-vm1-secondary
+
+queue_rules:
+  - name: vm1-mqoff-command
+    queue_conditions:
+      - title = VM1_MQOFF_COMMAND_260922
+    merge_conditions:
+      - title = VM1_MQOFF_COMMAND_260922
+
+merge_queue:
+  mode: serial
+  max_parallel_checks: 1
