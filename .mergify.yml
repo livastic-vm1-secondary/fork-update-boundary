@@ -5,19 +5,3 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
-  - name: VM1 qualified app pin positive 260923
-    conditions:
-      - title = VM1_QCHECK_APP_PIN_260923
-      - check-success = @vm1-qcheck-a-260923/vm1-qualified-gate
-    actions:
-      label:
-        add:
-          - vm1-qcheck-match
-  - name: VM1 qualified app slug reclaim merge impact 260923
-    conditions:
-      - base = vm1-qcheck-impact-target-260923
-      - title = VM1_QCHECK_MERGE_IMPACT_260923
-      - check-success = @vm1-qcheck-a-260923/vm1-qualified-gate
-    actions:
-      merge:
-        method: merge
