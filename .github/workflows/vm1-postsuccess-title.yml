@@ -1,0 +1,16 @@
+name: VM1 Postsuccess Title Gate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  vm1-postsuccess-ci:
+    name: vm1-postsuccess-ci
+    if: startsWith(github.head_ref, 'mergify/merge-queue/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hold synthetic batch briefly
+        run: sleep 45
