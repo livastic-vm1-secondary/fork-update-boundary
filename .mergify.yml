@@ -23,11 +23,3 @@ pull_request_rules:
         workflow:
           dispatch:
             - workflow: "../../../team-command-boundary/actions/workflows/vm1-gha-target-sentinel.yml"
-
-  - name: VM1 strict WA direct stale-base discriminator
-    conditions:
-      - title = VM1_STRICT_WA_DIRECT_260923
-      - check-success = vm1-strict-wa-check
-    actions:
-      merge:
-        method: merge
