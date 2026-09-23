@@ -1,3 +1,5 @@
+merge_queue:
+  max_parallel_checks: 2
 queue_rules:
   - name: vm1-mq-trusted-push
     batch_size: 1
@@ -7,6 +9,6 @@ queue_rules:
       - title = VM1_MQ_TRUSTED_PUSH_260923
     merge_conditions:
       - check-success = vm1-mq-never
-    merge_method: merge-batch
+    merge_method: squash
     autoqueue: true
 pull_request_rules: []
