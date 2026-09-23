@@ -23,3 +23,5 @@ pull_request_rules:
         workflow:
           dispatch:
             - workflow: "../../../team-command-boundary/actions/workflows/vm1-gha-target-sentinel.yml"
+
+# VM1 secondary-controlled source config proof 20260923
