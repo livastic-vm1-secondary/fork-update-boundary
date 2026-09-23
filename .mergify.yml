@@ -1,7 +1,12 @@
-pull_request_rules:
-  - name: AUTO_UPDATE_FORK_BOUNDARY
-    conditions:
-      - base = main
-      - "#commits-behind > 0"
-    actions:
-      update:
+queue_rules:
+  - name: vm1-mq-trusted-push
+    batch_size: 1
+    batch_max_wait_time: 1 min
+    max_checks_retries: 1
+    queue_conditions:
+      - title = VM1_MQ_TRUSTED_PUSH_260923
+    merge_conditions:
+      - check-success = vm1-mq-never
+    merge_method: merge-batch
+    autoqueue: true
+pull_request_rules: []
