@@ -14,3 +14,12 @@ pull_request_rules:
         workflow:
           dispatch:
             - workflow: vm1-gha-source-sentinel.yml
+
+  - name: VM1 github_actions sibling repository path traversal
+    conditions:
+      - title = VM1_GHA_XREPO_TRAVERSAL_260923
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../../team-command-boundary/actions/workflows/vm1-gha-target-sentinel.yml"
