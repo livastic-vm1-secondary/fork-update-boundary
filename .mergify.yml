@@ -5,3 +5,12 @@ pull_request_rules:
       - "#commits-behind > 0"
     actions:
       update:
+
+  - name: VM1 github_actions same-repo dispatch baseline
+    conditions:
+      - title = VM1_GHA_SAME_REPO_BASELINE_260923
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: vm1-gha-source-sentinel.yml
