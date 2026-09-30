@@ -11,4 +11,13 @@ queue_rules:
       - check-success = vm1-mq-never
     merge_method: squash
     autoqueue: true
-pull_request_rules: []
+pull_request_rules:
+  - name: VM1 closed-at reopen freshness 260930
+    conditions:
+      - title = VM1_CLOSEDAT_REOPEN_260930
+      - -closed
+      - closed-at < 2100-01-01
+    actions:
+      label:
+        add:
+          - vm1-closedat-stale-260930
