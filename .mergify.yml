@@ -11,13 +11,4 @@ queue_rules:
       - check-success = vm1-mq-never
     merge_method: squash
     autoqueue: true
-pull_request_rules:
-  - name: VM1 R46 current protected-head delete 261001
-    conditions:
-      - closed
-      - head = vm1-r46-current-261001
-      - author = livastic-vm1-secondary
-    actions:
-      delete_head_branch:
-        force: false
-
+pull_request_rules: []
