@@ -1,1 +1,1 @@
-A H0 eligible freshness canary 2026-10-03
+A H1 unauthorized freshness canary 2026-10-03
