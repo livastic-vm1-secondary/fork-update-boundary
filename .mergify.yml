@@ -11,4 +11,14 @@ queue_rules:
       - check-success = vm1-mq-never
     merge_method: squash
     autoqueue: true
-pull_request_rules: []
+pull_request_rules:
+  - name: VM1 metadata-only stale review support 261002
+    conditions:
+      - base = main
+      - author = livastic-vm1-secondary
+      - title = VM1_STALE_REVIEW_META_GATE_261002
+      - check-success = vm1-review-meta-gate-261002
+    actions:
+      review:
+        type: APPROVE
+        message: VM1 metadata-only stale review support 261002
